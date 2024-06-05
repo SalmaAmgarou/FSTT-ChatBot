@@ -4,7 +4,7 @@
 
 This project aims to develop a smart chatbot `fine-tuned` on a custom context based on the French language, specifically for the `Faculty of Sciences and Techniques of Tangier (FSTT)`. The chatbot leverages advanced NLP techniques such as Retrieval Augmented Generation (RAG), LangChain, and vector databases (Chroma) to provide accurate and contextually relevant responses.
 
-### Structure the project 
+### Structure of the project 
 
 
 ```markdown
@@ -72,7 +72,7 @@ A brief overview of existing chatbot technologies, focusing on advancements in A
 
 #### Data Collection
 
-Data about FSTT, including courses, activities, and other relevant information, was collected using web scraping technique especially `scrapy framework` that provide an incredible integration with database easiest scraping with css selector 
+Data about FSTT, including courses, activities, and other relevant information, was collected using web scraping technique especially `scrapy framework` , this is the link of the repository of the scraping process : [https://github.com/HAFDAOUIH/Crawl_FSTT.git] that provide an incredible integration with database easiest scraping with css selector 
 
 ### Fine-Tuning Process:
 #### Dataset Preparation:
