@@ -1,0 +1,6 @@
+
+   langchain==<version>
+   pymongo==<version>
+   sentence-transformers==<version>
+   torch==<version>
+   
