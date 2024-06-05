@@ -2,7 +2,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import ChatPromptTemplate
-from embeddings import embedding_function
+from .embeddings import embedding_function
 
 CHROMA_PATH = "chroma"
 prompt = PromptTemplate(
