@@ -77,7 +77,7 @@ Data about FSTT, including courses, activities, and other relevant information, 
 ### Fine-Tuning Process:
 #### Dataset Preparation:
 
-- The data was processed and formatted into `instructions` and `responses`.
+- The data was processed and formatted into `instructions` and `responses`. link to repository for extracting instructions/answers [https://github.com/SalmaAmgarou/QandA.git]
 - A `custom prompt` format was created to enhance the training process.
 
 #### Model Selection:
