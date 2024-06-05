@@ -2,12 +2,12 @@
 
 ## Project Overview
 
-This project aims to develop a smart chatbot fine-tuned on a custom context based on the French language, specifically for the Faculty of Sciences and Techniques of Tangier (FSTT). The chatbot leverages advanced NLP techniques such as Retrieval Augmented Generation (RAG), LangChain, and vector databases (Chroma) to provide accurate and contextually relevant responses.
+This project aims to develop a smart chatbot `fine-tuned` on a custom context based on the French language, specifically for the `Faculty of Sciences and Techniques of Tangier (FSTT)`. The chatbot leverages advanced NLP techniques such as Retrieval Augmented Generation (RAG), LangChain, and vector databases (Chroma) to provide accurate and contextually relevant responses.
 
 ### Structure the project 
 
 
-markdown
+```markdown
 chatbot/
 ├── .idea/
 ├── chatbot-app/
@@ -54,7 +54,7 @@ chatbot/
 │   ├── requirements.txt
 │   └── Dockerfile  # Dockerfile for backend
 └── docker-compose.yml
-
+```
 
 ### Introduction and Motivation:
 
@@ -63,8 +63,8 @@ The goal is to create a sophisticated chatbot capable of understanding and respo
 ### Motivation :
 
 
-- *RAG and LangChain:* These technologies allow the chatbot to generate more accurate and contextually appropriate responses by leveraging a combination of retrieval-based and generative methods.
-- *Vector Databases:* Chroma helps in efficiently storing and querying high-dimensional data, which is essential for handling the embeddings used in NLP models.
+- **RAG and LangChain:** These technologies allow the chatbot to generate more accurate and contextually appropriate responses by leveraging a combination of retrieval-based and generative methods.
+- **Vector Databases:** `Chroma` helps in efficiently storing and querying high-dimensional data, which is essential for handling the embeddings used in NLP models.
 
 ### Literature Review:
 
@@ -72,55 +72,55 @@ A brief overview of existing chatbot technologies, focusing on advancements in A
 
 #### Data Collection
 
-Data about FSTT, including courses, activities, and other relevant information, was collected using web scraping technique especially scrapy framework that provide an incredible integration with database easiest scraping with css selector 
+Data about FSTT, including courses, activities, and other relevant information, was collected using web scraping technique especially `scrapy framework` that provide an incredible integration with database easiest scraping with css selector 
 
 ### Fine-Tuning Process:
 #### Dataset Preparation:
 
-- The data was processed and formatted into instructions and responses.
-- A custom prompt format was created to enhance the training process.
+- The data was processed and formatted into `instructions` and `responses`.
+- A `custom prompt` format was created to enhance the training process.
 
 #### Model Selection:
 
-Mistral-7B-Instruct-v0.3 was chosen for its advanced capabilities in handling French language tasks and arabic also.
+`Mistral-7B-Instruct-v0.3` was chosen for its advanced capabilities in handling French language tasks and `arabic` also.
 
 #### Training:
 
-- The model was fine-tuned using LoRA (Low-Rank Adaptation) to optimize for performance and efficiency.
-- he training was conducted on Kaggle to leverage its computational resources.
+- The model was fine-tuned using `LoRA` (Low-Rank Adaptation) to optimize for performance and efficiency.
+- he training was conducted on `Kaggle` to leverage its `computational resources`.
 
 #### Implementation:
 
-- The chatbot backend was implemented using Flask, and the frontend using React.
-- Docker was used to containerize the applications for easy deployment.
+- The chatbot backend was implemented using `Flask`, and the frontend using `React`.
+- `Docker` was used to containerize the applications for easy deployment.
 
 ### Tools and Technologies
 
-- LLMs (Mistral, Ollama(Mistral))
-- LangChain
-- Vector Databases (Chroma)
-- LLMOps, Fine Tuning, LoRA/QLoRA
-- Quantization (float32 – int8)
-- PEFT (Parameter Efficient Fine-Tuning)
-- ReactJS, Flask, Docker
-- Arabic NLP, Data Augmentation, Scrapy Framework
-- Prompt Engineering
+- `LLMs (Mistral, Ollama(Mistral))`
+- `LangChain`
+- `Vector Databases (Chroma)`
+- `LLMOps, Fine Tuning, LoRA/QLoRA`
+- `Quantization (float32 – int8)`
+- `PEFT (Parameter Efficient Fine-Tuning)`
+- `ReactJS, Flask, Docker`
+- `Arabic NLP, Data Augmentation, Scrapy Framework`
+- `Prompt Engineering`
 
 
 ### Backend Development
 #### Choice of Framework
 
-Flask was chosen for its simplicity, flexibility, and scalability, making it suitable for building RESTful APIs.
+`Flask` was chosen for its simplicity, flexibility, and scalability, making it suitable for building `RESTful APIs`.
 
 
 ### DevOps Integration
 
-Continuous Integration and Deployment (CI/CD) were integrated using Docker, ensuring smooth and efficient development workflows.
+Continuous Integration and `Deployment (CI/CD)` were integrated using `Docker`, ensuring smooth and efficient development workflows.
 
 ### Single Page Application (SPA)
 #### Architecture
 
-The frontend was developed as a Single Page Application using React, offering a seamless and interactive user experience.
+The frontend was developed as a `Single Page Application` using `React`, offering a seamless and interactive user experience.
 Benefits and Challenges
 
     Benefits: Enhanced user experience, faster interactions, and easier state management.
@@ -146,16 +146,16 @@ The UI was designed to be accessible and user-friendly, aligning with the cultur
 
 Navigate to the project root directory and execute the following commands to build the Docker images:
 
-bash
+```bash
 docker-compose build
-
+```
 
 ### Running the Containers
 
 #### Start the containers using:
-bash
+```bash
 docker-compose up
-
+```
 
 ####  Run the containers
 #### Run container of front-end:
