@@ -28,15 +28,32 @@ def query():
     data = request.get_json()
     query_text = data['query']
     
+    query_text = data['query']
+
+    detailed_prompt = (
+        f"Vous êtes un assistant pour les tâches de réponse aux questions. Utilisez les éléments de contexte récupérés suivants pour répondre à la question. "
+        f"Si vous ne connaissez pas la réponse, dites simplement que vous ne savez pas. Utilisez autant de phrases que nécessaire pour fournir une réponse complète et trés trés détaillée.\n\n"
+        f"Voici la question de l'utilisateur : {query_text}\n\n"
+        "assistant:"
+    )
     if model and tokenizer:
-        pipe = pipeline(task="text-generation", model=model, tokenizer=tokenizer, max_length=800)
-        gen_text = pipe(query_text)
-        response = gen_text[0]['generated_text'][len(query_text):]
-        return jsonify({"response": response})
+        model_input = tokenizer(detailed_prompt, return_tensors="pt").input_ids
+        model.eval()
+        with torch.no_grad():
+            outputs = model.generate(
+                input_ids=model_input,
+                max_new_tokens=950,
+                pad_token_id=tokenizer.eos_token_id,
+                repetition_penalty=1.3,
+                num_beams=3,
+                early_stopping=True
+            )
+        answer = tokenizer.decode(outputs[0], skip_special_tokens=True)
+        response = answer
     else:
         # Fallback for other model types (RAG)
         response = query_rag(query_text, model, tokenizer) 
-        return jsonify({"response": response})
+    return jsonify({"response": response})
 @app.route('/load_model', methods=['POST'])
 def load_model_route():
     global model, tokenizer
